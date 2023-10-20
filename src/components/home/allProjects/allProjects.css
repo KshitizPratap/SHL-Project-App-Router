@@ -1,0 +1,25 @@
+.projects-grid{
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr 1fr;
+    
+}
+
+
+@media (max-width: 900px) {
+    .projects-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+    .projects-grid { grid-template-columns: repeat(1, 1fr); }
+}
+
+.search{
+    margin-left: 39%;
+    margin-bottom: 30px;
+    margin-top:20px;
+}
+
+.search input{
+   width:40%;
+   border: 2px solid rgb(84, 82, 82);
+}

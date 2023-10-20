@@ -85,20 +85,6 @@ const AllProjects = ({ allProjects }) => {
           }}
           placeholder="Search"
         ></input>
-        <input
-          type="text"
-          onChange={(e) => {
-            setfrontendTech({...search ,frontend : [e.target] });
-          }}
-          placeholder="Frontend"
-        ></input>
-        <input
-          type="text"
-          onChange={(e) => {
-            setBackendTech({...search ,backendTech : [e.target] });
-          }}
-          placeholder="Backend"
-        ></input>
       </div>
       {search == null
         ? allProjects.map((project, index) => {

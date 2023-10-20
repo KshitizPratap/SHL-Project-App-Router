@@ -3,8 +3,8 @@ import Project from "./project";
 import { useEffect, useState } from "react";
 const AllProjects = ({ allProjects }) => {
   const [search, setSearch] = useState({title: '', frontend :[] ,backend :[] , database :[] , technologies:[] ,infrastructure:[] });
-  const [frontendTech ,setfrontendTech] = useState([])
-  const [backendTech ,setBackendTech] = useState([])
+//   const [frontendTech ,setfrontendTech] = useState([])
+//   const [backendTech ,setBackendTech] = useState([])
   const [allConvertedProjects, setAllConvertedProjects] = useState([]);
   const [filteredProjects, setFilteredProjects] = useState([]);
   

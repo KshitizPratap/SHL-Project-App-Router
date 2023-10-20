@@ -1,6 +1,5 @@
 // const projectService = require('../services/projectService');
 import projectService from '../services/projectServices'
-
 const projectController = {};
 
 projectController.getProjects = async(req,res) => {

@@ -1,7 +1,7 @@
-
 // const Project = require('../schema/project');
 import Project from '../schema/project'
 const projectService = {};
+const keyword = "Python";
 projectService.getProjects = async() => {
     try{
         

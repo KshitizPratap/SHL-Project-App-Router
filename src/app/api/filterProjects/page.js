@@ -1,10 +1,9 @@
 import projectController from "../../../../server/controllers/projectController";
-
 import {connect} from 'mongoose'
 import config from '../../../../config/env';
 const handler = async(req, res)=> {
  
-    await connect(config.mongo.uri, {useNewUrlParser : true, useUnifiedTopology : true})
+  await connect(config.mongo.uri, {useNewUrlParser : true, useUnifiedTopology : true})
   if (req.method === 'GET') {
     try{
     const projects = await projectController.getProjects();

@@ -1,39 +1,42 @@
-"use client"
-import ProjectDetails from "./projectDetails"
-import { useState } from "react"
-
-const Project =({project})=> {
-    const [modelOpen , setModelOpen] = useState(false)
-return <div>
-    <div onClick={()=>{setModelOpen(true)}}>
-    
-    <div>Title</div>
-        <div>{project?.title}</div>
-        <div>Project Technologies</div>
+"use client";
+import ProjectDetails from "./projectDetails";
+import { useState } from "react";
+import "./project.css"
+const Project = ({ project }) => {
+  const [modelOpen, setModelOpen] = useState(false);
+  return (
+    <div>
+      <div
+        onClick={() => {
+          setModelOpen(true);
+        }}
+        className="project-container"
+      >
+        {/* <div>Title</div> */}
+        <div className="project-title">{project?.title}</div>
+        <div className="project-sub-title">Project Technologies</div>
         <div>
           {" "}
           {project?.technologies?.length
             ? project?.technologies.join(",")
             : "---"}{" "}
         </div>
-        <div>Technical Skillset Frontend</div>
+        <div className="project-sub-title">Technical Skillset Frontend</div>
         <div>
           {" "}
           {project?.frontend?.length ? project?.frontend.join(",") : "---"}{" "}
         </div>
-        <div>Technical Skillset Backend</div>
+        <div className="project-sub-title">Technical Skillset Backend</div>
         <div>
           {" "}
-          {project?.backend?.length
-            ? project?.backend.join(",")
-            : "---"}{" "}
+          {project?.backend?.length ? project?.backend.join(",") : "---"}{" "}
         </div>
-        <div>Technical Skillset Databases</div>
+        <div className="project-sub-title">Technical Skillset Databases</div>
         <div>
           {" "}
           {project?.database?.length ? project?.database.join(",") : "---"}{" "}
         </div>
-        <div>Technical Skillset Infrastructure</div>
+        <div className="project-sub-title">Technical Skillset Infrastructure</div>
         <div>
           {" "}
           {project?.infrastructure?.length
@@ -42,9 +45,13 @@ return <div>
         </div>
       </div>
 
-{  modelOpen &&
-    <ProjectDetails project={project} setModelOpen={setModelOpen} />
-}
-</div>
-}
-export default Project ; 
+      <div className="inner-container">
+      {modelOpen && (
+        <ProjectDetails project={project} setModelOpen={setModelOpen} />
+      )}
+      </div>
+      
+    </div>
+  );
+};
+export default Project;

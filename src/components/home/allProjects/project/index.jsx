@@ -1,9 +1,8 @@
 "use client"
 import ProjectDetails from "./projectDetails"
 import { useState } from "react"
-
 const Project =({project})=> {
-    const [modelOpen , setModelOpen] = useState(false)
+    const [modelOpen , setModelOpen] = useState(false);
 return <div>
     <div onClick={()=>{setModelOpen(true)}}>
     

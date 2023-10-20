@@ -67,7 +67,7 @@ const AllProjects = ({ allProjects }) => {
         }
       }
       if (x) continue;
-      console.log(allProjects[index]);
+      
       tempProjectsList.push(allProjects[index]);
     }
     

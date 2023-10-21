@@ -1,7 +1,7 @@
 "use client"
 import "./index.css"
 const ProjectDetails = ({project , setModelOpen})=>{
-    return<div className="container">
+    return<div className="container ">
     <div className='title'>{project?.title}</div>
     <div className='tech'>Project Technologies</div>
     <div>

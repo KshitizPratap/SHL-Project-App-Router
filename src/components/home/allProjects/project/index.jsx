@@ -4,7 +4,7 @@ import "./project.css"
 const Project = ({ project , modelOpen , setModelOpen }) => {
   
   return (
-    <div>
+    <div className="z-10" >
       <div
         onClick={(e) => {
           setModelOpen(project._id.toString());

@@ -1,7 +1,7 @@
 "use client"
 import "./index.css"
 const ProjectDetails = ({project , setModelOpen})=>{
-    return<div className="container">
+    return<div className="container ">
     <div className='title'>{project?.title}</div>
     <div className='tech'>Project Technologies</div>
     <div>
@@ -34,11 +34,11 @@ const ProjectDetails = ({project , setModelOpen})=>{
         ? project?.infrastructure.join(",")
         : "---"}{" "}
     </div>
-    <div className='tech'>Other Information Availability</div>
+    <div className='tech'>Description</div>
     <div >
       {" "}
-      {project?.availability?.length
-        ? project?.availability.join(",")
+      {project?.desc?.length
+        ? project?.desc
         : "---"}{" "}
     </div>
   </div>

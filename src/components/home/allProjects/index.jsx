@@ -2,16 +2,20 @@
 import Project from "./project";
 import { useEffect, useState } from "react";
 import "./allProjects.css"
+
 const AllProjects = ({ allProjects }) => {
   const [filteredProjects , setFilteredProjects] = useState([]);
+  const [detailsModelOpen, setDetailsModelOpen] = useState();
   const [search, setSearch] = useState([]);
   const filterProjects = async()=>{
-    const projects = await fetch("http://localhost:3000/api/filterProjects",{method :"GET" ,headers :{"Content-Type": "application/json"},body:JSON.stringify(search) });
+    const projects = await fetch(`${window.location.origin}/api/filterProjects`,{method :"GET" ,headers :{"Content-Type": "application/json"},body:JSON.stringify(search) });
     console.log("proj",projects); 
-    setFilteredProjects(projects);
+    setFilteredProjects(projects[0]);
+
   }
+  console.log(allProjects)
   return (
-    <div>
+    <div onClick={()=>{setDetailsModelOpen(null)}} >
       <div className="search">
         <input
           type="text"
@@ -26,10 +30,10 @@ const AllProjects = ({ allProjects }) => {
       <div className="projects-grid">
         {search.length == 0
           ? allProjects.map((project, index) => {
-              return <Project key={index} project={project} />;
+              return <Project key={index} project={project} modelOpen = {detailsModelOpen} setModelOpen ={setDetailsModelOpen} />;
             })
           : filteredProjects.map((project, index) => {
-              return <Project key={index} project={project} />;
+              return <Project key={index} project={project}  modelOpen = {detailsModelOpen} setModelOpen ={setDetailsModelOpen} />;
             })}
       </div>
     </div>

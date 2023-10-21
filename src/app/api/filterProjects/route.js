@@ -12,7 +12,7 @@ import { NextResponse } from "next/server";
 //   message: string
 // }
  
-export const  GET=(
+export const GET=(
   req,
   res
 )=> {

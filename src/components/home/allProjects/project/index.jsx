@@ -1,14 +1,14 @@
 "use client";
 import ProjectDetails from "./projectDetails";
-import { useState } from "react";
 import "./project.css"
-const Project = ({ project }) => {
-  const [modelOpen, setModelOpen] = useState(false);
+const Project = ({ project , modelOpen , setModelOpen }) => {
+  
   return (
     <div>
       <div
-        onClick={() => {
-          setModelOpen(true);
+        onClick={(e) => {
+          setModelOpen(project._id.toString());
+          e.stopPropagation()
         }}
         className="project-container"
       >
@@ -46,7 +46,7 @@ const Project = ({ project }) => {
       </div>
 
       <div className="inner-container">
-      {modelOpen && (
+      {modelOpen== project._id.toString() && (
         <ProjectDetails project={project} setModelOpen={setModelOpen} />
       )}
       </div>

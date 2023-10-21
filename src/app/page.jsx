@@ -17,7 +17,7 @@ const Home=async()=> {
   // },[])
   await connect(config.mongo.uri, {useNewUrlParser : true, useUnifiedTopology : true});
   const allProjects =await projectController.getProjects();
-  console.log(allProjects)
+  
   
   return (
     <main>

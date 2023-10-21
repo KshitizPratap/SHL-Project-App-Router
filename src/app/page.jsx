@@ -3,6 +3,7 @@ import projectController from "../../server/controllers/projectController";
 import {connect} from 'mongoose'
 import config from "../../config/env";
 
+
 const Home=async()=> {
   // const [search , setSearch] = useState("");
   // const [allProjects , setAllProjects] = useState([]);
@@ -16,7 +17,7 @@ const Home=async()=> {
   //   fetchProjects()
   // },[])
   await connect(config.mongo.uri, {useNewUrlParser : true, useUnifiedTopology : true});
-  const allProjects =await projectController.getProjects();
+  const allProjects = await projectController.getProjects();
   
   
   return (

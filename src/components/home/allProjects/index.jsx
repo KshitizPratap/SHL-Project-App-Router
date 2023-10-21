@@ -8,12 +8,19 @@ const AllProjects = ({ allProjects }) => {
   const [detailsModelOpen, setDetailsModelOpen] = useState();
   const [search, setSearch] = useState([]);
   const filterProjects = async()=>{
-    const projects = await fetch(`${window.location.origin}/api/filterProjects`,{method :"POST" ,headers :{"Content-Type": "application/json"},body:JSON.stringify(search) });
+    const data = [
+      ...search
+    ]
+    const projects = await fetch(`${window.location.origin}/api/filterProjects`,{method :"POST" ,headers :{"Content-Type": "application/json"},body:JSON.stringify(data) });
     const res = await projects.json();
-    console.log("res", res)
-    // setFilteredProjects(projects[0]);
+    
+    setFilteredProjects(res);
 
   }
+
+  useEffect(() => {
+    console.log(filteredProjects)
+  },[filteredProjects]);
   
   return (
     <div onClick={()=>{setDetailsModelOpen(null)}} >

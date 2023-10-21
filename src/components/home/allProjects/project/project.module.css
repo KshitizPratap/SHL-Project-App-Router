@@ -1,0 +1,45 @@
+.project_container {
+  padding: 1rem 2rem;
+  border: 1px rgb(194 188 188) solid;
+  border-radius: 20px;
+  margin: 5px;
+  background-color: rgb(255, 255, 255);
+  min-height: 350px;
+  position: relative;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.project_container:hover{
+  box-shadow: 1px 1px 7px 0px #d4d4d4;
+}
+
+.project_container h3 {
+  font-size: 20px;
+}
+
+.title {
+  justify-content: center;
+  text-align: center;
+  font-weight: 800;
+  padding: 10px 0 5px 0;
+  font-size: 24px;
+}
+
+.infoWrapper {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.infoContainer {
+  margin: 0.5rem 0 1rem 0;
+}
+
+.infoContainer p:first {
+  font-size: 14px;
+}
+
+.infoContainer p:last-child {
+  font-size: 13px;
+}

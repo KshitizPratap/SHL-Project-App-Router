@@ -1,5 +1,5 @@
 "use client";
-import Project from "./project";
+import Project from "./project/project";
 import { useEffect, useState } from "react";
 import "./allProjects.css"
 
@@ -15,7 +15,7 @@ const AllProjects = ({ allProjects }) => {
   }
   console.log(allProjects)
   return (
-    <div onClick={()=>{setDetailsModelOpen(null)}} >
+    <div onClick={()=>{setDetailsModelOpen(null)}} className="main-container">
       <div className="search">
         <input
           type="text"

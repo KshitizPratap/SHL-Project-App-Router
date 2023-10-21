@@ -1,7 +1,15 @@
+ .main-container{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
 .projects-grid{
     display: grid;
-    grid-template-columns:1fr 1fr 1fr 1fr;
-    
+    grid-template-columns:1fr 1fr 1fr;
+    width: 80vw;
+    gap: 1rem;
 }
 
 

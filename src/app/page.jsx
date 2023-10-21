@@ -21,7 +21,7 @@ const Home=async()=> {
   
   return (
     <main>
-      <div>Projects </div>
+      
       <div>
         
         {allProjects && <AllProjects allProjects={allProjects} />}

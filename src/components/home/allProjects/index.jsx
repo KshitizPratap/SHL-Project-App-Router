@@ -1,6 +1,7 @@
 "use client";
 import Project from "./project";
 import { useEffect, useState } from "react";
+import "./allProjects.css"
 const AllProjects = ({ allProjects }) => {
   const [filteredProjects , setFilteredProjects] = useState([]);
   const [search, setSearch] = useState([]);
@@ -11,23 +12,26 @@ const AllProjects = ({ allProjects }) => {
   }
   return (
     <div>
-      <div>
+      <div className="search">
         <input
           type="text"
           onChange={(e) => {
             setSearch([...e.target.value.split(" ")]);
           }}
-          placeholder="Search"
+          placeholder="🔎Search"
         ></input>
         <button onClick={()=>{filterProjects();}} >Search</button>
       </div>
-      {search.length == 0
-        ? allProjects.map((project, index) => {
-            return <Project key={index} project={project} />;
-          })
-        : filteredProjects?.map((project, index) => {
-            return <Project key={index} project={project} />;
-          })}
+      
+      <div className="projects-grid">
+        {search.length == 0
+          ? allProjects.map((project, index) => {
+              return <Project key={index} project={project} />;
+            })
+          : filteredProjects.map((project, index) => {
+              return <Project key={index} project={project} />;
+            })}
+      </div>
     </div>
   );
 };
